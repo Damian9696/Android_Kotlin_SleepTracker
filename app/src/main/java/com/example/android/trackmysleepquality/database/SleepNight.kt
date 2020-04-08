@@ -24,7 +24,7 @@ import androidx.room.PrimaryKey
 data class SleepNight(
 
         @PrimaryKey(autoGenerate = true)
-        val nightId: Long = 0L,
+        var nightId: Long = 0L,
 
         @ColumnInfo(name = "start_time_milli")
         val startTimeMilli: Long = System.currentTimeMillis(),
