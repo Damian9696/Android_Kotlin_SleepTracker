@@ -68,6 +68,16 @@ class SleepTrackerFragment : Fragment() {
         //Assign the sleepTrackerViewModel binding variable to the sleepTrackerViewModel
         binding.sleepTrackerViewModel = sleepTrackerViewModel
 
+        val adapter = SleepNightAdapter()
+        binding.sleepList.adapter = adapter
+
+        /* viewLifecycleOwner -> make sure this observer is only around when the RecyclerView
+            is still on screen
+        * */
+        sleepTrackerViewModel.nights.observe(viewLifecycleOwner, Observer {
+            adapter.data = it
+        })
+
         sleepTrackerViewModel.navigateToSleepQuality.observe(this, Observer { night ->
             night?.let {
                 this.findNavController().navigate(SleepTrackerFragmentDirections
@@ -77,7 +87,7 @@ class SleepTrackerFragment : Fragment() {
         })
 
         sleepTrackerViewModel.showSnackBarEvent.observe(this, Observer {
-            if(it == true){
+            if (it == true) {
                 Snackbar.make(
                         activity!!.findViewById(android.R.id.content),
                         getString(R.string.cleared_message),
