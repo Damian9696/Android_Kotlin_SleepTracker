@@ -75,7 +75,7 @@ class SleepTrackerFragment : Fragment() {
             is still on screen
         * */
         sleepTrackerViewModel.nights.observe(viewLifecycleOwner, Observer {
-            adapter.data = it
+            adapter.submitList(it)
         })
 
         sleepTrackerViewModel.navigateToSleepQuality.observe(this, Observer { night ->
