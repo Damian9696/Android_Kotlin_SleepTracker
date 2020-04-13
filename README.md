@@ -27,3 +27,5 @@ It also uses and builds on the following techniques from previous lessons:
 ![Screenshot1](screenshots/sleep_quality_tracker_start.png)
 ![Screenshot2](screenshots/sleep_quality_tracker_stop.png)
 ![Screenshot3](screenshots/sleep_quality_tracker_quality.png)
+![Screenshot4](screenshots/sleep_tracker_recycler_detail.png)
+![Screenshot5](screenshots/sleep_tracker_recycler_home.png)
